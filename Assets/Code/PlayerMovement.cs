@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
 {
-    rb = GetComponent<Rigidbody2D>();  // 修正：使用尖括号，括号在后面
+    rb = GetComponent<Rigidbody2D>();  
 }
 
     
@@ -40,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position+input*moveSpeed*Time.fixedDeltaTime);
+        // rb.MovePosition(rb.position+input*moveSpeed*Time.fixedDeltaTime);
+        rb.velocity = input * moveSpeed;
+
     }
 }
