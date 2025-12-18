@@ -1,1 +1,82 @@
-".gitignore" 
+    # This .gitignore file should be placed at the root of your Unity project directory
+    #
+    # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
+    
+    ## Ignore Visual Studio temporary files, build results, and
+    ## files related to Intellisense and Refactoring
+    ## https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
+    # User-specific files
+    *.suo
+    *.user
+    *.userosscache
+    *.sln.docstates
+    
+    # Build results
+    [Dd]ebug/
+    [Rr]elease/
+    *_i.c
+    *_p.c
+    *.ilk
+    *.meta
+    *.obj
+    *.pch
+    *.pdb
+    *.cgb
+    *.clw
+    *.lib
+    *.exp
+    *.bns
+    *.idb
+    *.sbr
+    *.tlb
+    *.tli
+    *.tlb
+    *.vcUILD
+    *.vcxproj.vspscc
+    *.vssscc
+    *_i.c
+    *.ipch
+    *.ncb
+    *.sdf
+    *.csext
+    *.dotSettings.user
+    
+    # NuGet package files
+    *.nupkg
+    # The packages folder can be ignored because of Package Restore
+    **/[Pp]ackages/*
+    # except build/, which is used as a communication channel between NuGet clients and servers.
+    # Mac: mono/.mymac/
+    # Windows: obj/
+    !**/[Pp]ackages.config
+    !**/[Pp]ackages.lock.json
+    
+    # Mono auto generated files
+    *.mdb
+    
+    ## Ignore Unity generated meta files
+    ## https://github.com/github/gitignore/blob/master/Unity.gitignore
+    # Graphics emulation
+    **/[Ss]creen[Ee]ssentials.meta
+    
+    # File logging
+    **/[Ll]ogs
+    
+    # Profiler
+    **/[Pp]rofiler/*
+    
+    # Build
+    **/[Bb]uild/
+    
+    # Memory dump
+    **/[Dd]ump/
+    
+    # Asset meta data
+    **/[Aa]sset[Aa]rtifacts
+    **/[Aa]sset[Aa]rtifacts.meta
+    
+    # Auto generated VS/MD/Consulo solution files
+    **/[Ss]olution[Uu]pdate[Uu]id.CachedFile
+    **/[Ss]olution[Gg]eneratedFiles
+    **/[Tt]emp/[Ss]olution[Gg]eneratedFiles*
+    **
