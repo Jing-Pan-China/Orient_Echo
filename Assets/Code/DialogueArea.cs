@@ -7,6 +7,7 @@ public class DialogueArea : MonoBehaviour
     
 
     // public GameObject target;
+    // public GameObject target;
     public bool playerInRange=false;
 
     public DialogueManager dialogueManager;
