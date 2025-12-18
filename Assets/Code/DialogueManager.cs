@@ -9,10 +9,15 @@ public class DialogueManager : MonoBehaviour
     private DialogueNode currentNode;
     void Start()
     {
+      
+    }
+    
+
+     public void StartDialogue()
+    {
        currentNode =startNode;
        ShowCurrentNode(); 
     }
-
 
     public void Next()
     {
