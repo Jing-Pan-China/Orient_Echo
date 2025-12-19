@@ -7,23 +7,35 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     public DialogueNode startNode;
     private DialogueNode currentNode;
+
+    private bool dialogueStarted=false;
     void Start()
     {
       
     }
     
 
-     public void StartDialogue()
-    {
+    //  public void StartDialogue()
+    // {
+    //    currentNode =startNode;
+    //    ShowCurrentNode(); 
+    // }
+
+      public void StartDialogue()
+    {  
+      if (!dialogueStarted)
+      {
        currentNode =startNode;
        ShowCurrentNode(); 
+      }
     }
 
     public void Next()
     {
         if(currentNode.nextNode==null)
         {
-            Debug.Log("....");
+            // Debug.Log("....");
+            dialogueStarted=true;
             return;
 
         }
