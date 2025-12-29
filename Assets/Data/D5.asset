@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e9b138a81e97c443b7284fe3f8a9e8f, type: 3}
-  m_Name: Dialogue1.asset Node
+  m_Name: D5
   m_EditorClassIdentifier: 
-  text: 'Hello yong man '
-  nextNode: {fileID: 11400000, guid: 4bdb634ea73be9e4d8930bfd978ebfed, type: 2}
+  text: Clever
+  choiceTexts: []
+  nextNode: {fileID: 0}
+  nextNodes: []

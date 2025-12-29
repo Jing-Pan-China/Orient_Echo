@@ -11,7 +11,11 @@ public class DialogueNode : ScriptableObject
 
     [TextArea]
     public string text;
+
+    public string[] choiceTexts;
     public DialogueNode nextNode;
+    //  
+    public DialogueNode[] nextNodes;
 
 }
 

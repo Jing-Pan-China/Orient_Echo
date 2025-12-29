@@ -7,38 +7,43 @@ public class DialogueArea : MonoBehaviour
     
 
     // public GameObject target;
-    // public GameObject target;
     public bool playerInRange=false;
 
     public DialogueManager dialogueManager;
 
+    // E dialogue hint 
+    public GameObject eHint;
+
     
-    // dialogueStarted is a flag variable used to record whether the dialogue has been started.”
-    private bool dialogueStarted=false;
+ 
 
-
-
+    void Start()
+    {
+        eHint.SetActive(false);
+    }
+     
     // 
     void Update()
     {
-        if (playerInRange == true && !dialogueStarted )
+        
+        
+        if (playerInRange==true && Input.GetKeyDown(KeyCode.E))
+
         {
+            eHint.SetActive(false);
             dialogueManager.StartDialogue();
-            dialogueStarted=true;
+           
         }
     }
 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // if (other.gameObject == target)
-        // {
-        //     playerInRange=true;
-        
-        // }
+      
 
         // use layer matrix 
         playerInRange=true;
+        eHint.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D other){
@@ -52,7 +57,9 @@ public class DialogueArea : MonoBehaviour
 
     // use layer matrix 
     playerInRange=false;
-    dialogueStarted=false;
+    eHint.SetActive(false);
+    dialogueManager.CancelDialogue();
+    
      
 
     }

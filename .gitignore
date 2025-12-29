@@ -80,3 +80,17 @@
     **/[Ss]olution[Gg]eneratedFiles
     **/[Tt]emp/[Ss]olution[Gg]eneratedFiles*
     **
+
+    # Unity standard ignores
+Library/
+Temp/
+Logs/
+obj/
+*.csproj
+*.sln
+*.user
+*.pidb
+*.booproj
+*.svd
+*.userprefs
+*.pidb.meta

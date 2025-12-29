@@ -1,60 +1,125 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     public DialogueNode startNode;
     private DialogueNode currentNode;
-
+    
+ 
+    // dialogueStarted is a flag variable used to record whether the dialogue has been started.”
+    
     private bool dialogueStarted=false;
+
+    // Reference to DialogueUI
+    public DialogueUI dialogueUI;
     void Start()
     {
-      
+    //   dialogueUI=FindObjectOfType<DialogueUI>();
     }
     
 
-    //  public void StartDialogue()
-    // {
-    //    currentNode =startNode;
-    //    ShowCurrentNode(); 
-    // }
+  
 
       public void StartDialogue()
-    {  
-      if (!dialogueStarted)
-      {
+    { 
+      
+      if (dialogueStarted) return;
+      else{
+       dialogueStarted= true;
        currentNode =startNode;
+      
        ShowCurrentNode(); 
       }
     }
 
+
+    //linearity by pressing next 
     public void Next()
+
     {
+        // Guard Clause
+        if(!dialogueStarted||currentNode==null) return;
         if(currentNode.nextNode==null)
         {
-            // Debug.Log("....");
+            
             dialogueStarted=true;
+            dialogueUI.HideDialogue();
             return;
 
         }
+        
+        
+        //  Linear node or branch node: move to the next dialogue node
+        else if(currentNode.nextNode!=null ||currentNode.nextNodes.Length>1)
+        {
+            currentNode= currentNode.nextNode;
+            ShowCurrentNode();
+        }
+        
+      
+      
+        
+      
+    } 
 
-        currentNode= currentNode.nextNode;
+
+    //unlinearity by selecting the choices
+    public void SelectChoice(int index)
+    {
+        currentNode=currentNode.nextNodes[index];
         ShowCurrentNode();
     }
 
-    // Update is called once per frame
-    void ShowCurrentNode()
+
+
+
+
+    public void ShowCurrentNode()
+    {   
+        //  Linear node:display text;
+        Debug.Log(currentNode.text);
+        dialogueUI.ShowDialogueText(currentNode.text);
+        
+        
+        // Branches：display choiceTexts;
+        if (currentNode.choiceTexts != null && currentNode.choiceTexts.Length > 0)
     {
-        Debug.Log(currentNode.text) ;
+        dialogueUI.ShowChoiceTexts(currentNode.choiceTexts);
+        dialogueUI.SetNextButtonVisible(false);
+        Debug.Log(currentNode.choiceTexts.Length);
+    }
+        
+        else
+        {
+            dialogueUI.HideChoices();
+            dialogueUI.SetNextButtonVisible(true);
+        }
+       
+    }
+
+
+ 
+    // stop the current dialogue when the player leaves the inRange area;
+    public void CancelDialogue()
+    {
+        dialogueStarted=false; 
+        currentNode=null;
+        dialogueUI.HideDialogue();
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(currentNode!=null&&Input.GetKeyDown(KeyCode.E))
         {
             Next();
         }
+
+        
     }
 }
+
+
