@@ -108,7 +108,10 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueStarted=false; 
         currentNode=null;
+        if (dialogueUI != null && dialogueUI.gameObject != null)
+       {
         dialogueUI.HideDialogue();
+       }
     }
 
     void Update()
