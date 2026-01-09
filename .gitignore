@@ -7,6 +7,12 @@
 [Ll]ogs/
 [Mm]emoryCaptures/
 [Cc]ache/
+Library/
+Temp/
+Obj/
+Logs/
+Build/
+Builds/
 
 # ============ User-specific files ============
 *.csproj
