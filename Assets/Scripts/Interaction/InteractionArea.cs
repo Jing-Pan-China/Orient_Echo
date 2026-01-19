@@ -2,27 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueArea : MonoBehaviour
+// public class InteractionArea : MonoBehaviour
+// {
+//     // Start is called before the first frame update
+//     void Start()
+//     {
+        
+//     }
+
+//     // Update is called once per frame
+//     void Update()
+//     {
+        
+//     }
+// }
+
+
+
+public abstract class InteractionArea:MonoBehaviour
 {
     
-
-    // public GameObject target;
     public bool playerInRange=false;
-
-    public DialogueManager dialogueManager;
-
-    // E dialogue hint 
     public GameObject eHint;
 
-    
- 
 
     void Start()
     {
         eHint.SetActive(false);
     }
-     
-    // 
+
+    
     void Update()
     {
         
@@ -31,11 +40,13 @@ public class DialogueArea : MonoBehaviour
 
         {
             eHint.SetActive(false);
-            dialogueManager.StartDialogue();
+            OnInteract();
            
         }
     }
 
+
+    protected abstract void OnInteract();
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -46,26 +57,16 @@ public class DialogueArea : MonoBehaviour
         eHint.SetActive(true);
     }
 
-    private void OnTriggerExit2D(Collider2D other){
-    //     if(other.gameObject==target)
-    // {
-    //     playerInRange=false;
-    //     dialogueStarted=false;
-    // }
-
-        
-
-    // use layer matrix 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+   // use layer matrix 
     playerInRange=false;
     eHint.SetActive(false);
-    dialogueManager.CancelDialogue();
+    UnInteract();
     
-     
-
     }
-    
+
+    protected abstract void UnInteract();
 
 
-
-  
 }
