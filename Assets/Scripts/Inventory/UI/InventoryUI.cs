@@ -12,16 +12,26 @@ public class InventoryUI : MonoBehaviour
     public Transform inventoryPanel; 
     public GameObject itemSlotPrefab; 
 
+   
+    
+    private void onNonParticleAdded()
+    {
+        // Subscriber
+        Refresh(Inventory.Instance.nonParticleList);
+        gameObject.SetActive(true);
+    }
+
+
     public void Refresh(List<NonParticle> items)
     {
-        Debug.Log("Refresh 函数被调用了！"); 
-        // 1. 清空旧 UI
+        
+        // 1. clear old UI
         foreach (Transform child in inventoryPanel)
         {
             Destroy(child.gameObject);
         }
 
-        // 2. 重新生成
+        // 2. create the new UI 
         foreach (NonParticle item in items)
         {
             GameObject slot = Instantiate(itemSlotPrefab, inventoryPanel);
@@ -32,7 +42,7 @@ public class InventoryUI : MonoBehaviour
             slot.name = $"ItemSlot_{item.text}";
         }
         
-        Debug.Log("Refresh 被调用了！物品数量: " + items.Count);
+       
         
     }
 

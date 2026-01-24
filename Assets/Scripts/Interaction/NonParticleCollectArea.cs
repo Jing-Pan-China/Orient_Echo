@@ -26,6 +26,7 @@ public class NonParticleCollectArea : InteractionArea
         //2.Inventory Singleton
         Inventory.Instance.AddNonParticle(nonParticle);
 
+        
         Debug.Log(nonParticle);
         Destroy(gameObject);
 
