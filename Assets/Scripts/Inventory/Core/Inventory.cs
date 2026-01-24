@@ -8,16 +8,26 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {   
+   
+   
+    // Inventory Singleton
+    public static Inventory Instance{get;private set;}
     public List<NonParticle> nonParticleList= new List<NonParticle>();
     public InventoryUI inventoryUI;
     
-    // Start is called before the first frame update
+    
+    private void Awake()
+    {
+        Instance=this;
+    }
+
+
 
     public void AddNonParticle(NonParticle item)
     {   
         
         nonParticleList.Add(item);
-        Debug.Log("inventoryUI 的值是");
+       
        
         inventoryUI.Refresh(nonParticleList);
         inventoryUI.gameObject.SetActive(true);
