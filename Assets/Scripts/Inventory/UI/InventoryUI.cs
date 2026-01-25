@@ -10,7 +10,7 @@ public class InventoryUI : MonoBehaviour
     
 
     
-    
+    public static InventoryUI Instance { get; private set; }
     public Transform inventoryPanel; 
     public GameObject itemSlotPrefab; 
     
@@ -18,7 +18,7 @@ public class InventoryUI : MonoBehaviour
 
      private void Awake()
     {
-    //     Instance=this;
+        Instance=this;
       
 
         
