@@ -5,20 +5,44 @@ using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
+    // InventoryUI as singleton
+    // public static InventoryUI Instance { get; private set; }
     
-    
-    // Start is called before the first frame update
 
+    
+    
     public Transform inventoryPanel; 
     public GameObject itemSlotPrefab; 
-
-   
     
+
+
+     private void Awake()
+    {
+    //     Instance=this;
+      
+
+        
+       
+        // Inventory.onNonParticleAdded += onNonParticleAdded;
+        
+    }
+    
+
+
+
+    void Start()
+    {   gameObject.SetActive(true);
+        // Inventory.Instance.onNonParticleAdded += onNonParticleAdded;
+         // Subscriber
+        Inventory.onNonParticleAdded += onNonParticleAdded;
+    }
+
     private void onNonParticleAdded()
     {
-       
+        
         Refresh(Inventory.Instance.nonParticleList);
-        gameObject.SetActive(true);
+        // gameObject.SetActive(true);
+        inventoryPanel.gameObject.SetActive(true);
     }
 
 
@@ -48,12 +72,6 @@ public class InventoryUI : MonoBehaviour
 
    
     
-    void Start()
-    {
-        // Inventory.Instance.onNonParticleAdded += onNonParticleAdded;
-         // Subscriber
-        Inventory.onNonParticleAdded += onNonParticleAdded;
-    }
 
     // Update is called once per frame
     void Update()
