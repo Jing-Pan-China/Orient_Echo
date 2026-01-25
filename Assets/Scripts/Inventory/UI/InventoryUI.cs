@@ -16,7 +16,7 @@ public class InventoryUI : MonoBehaviour
     
     private void onNonParticleAdded()
     {
-        // Subscriber
+       
         Refresh(Inventory.Instance.nonParticleList);
         gameObject.SetActive(true);
     }
@@ -50,12 +50,14 @@ public class InventoryUI : MonoBehaviour
     
     void Start()
     {
-        
+        // Inventory.Instance.onNonParticleAdded += onNonParticleAdded;
+         // Subscriber
+        Inventory.onNonParticleAdded += onNonParticleAdded;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 }
