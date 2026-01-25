@@ -31,7 +31,7 @@ public class InventoryUI : MonoBehaviour
 
 
     void Start()
-    {   gameObject.SetActive(true);
+    {   gameObject.SetActive(false);
         // Inventory.Instance.onNonParticleAdded += onNonParticleAdded;
          // Subscriber
         Inventory.onNonParticleAdded += onNonParticleAdded;
