@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -64,11 +67,27 @@ public class InventoryUI : MonoBehaviour
             TMP_Text text = slot.GetComponentInChildren<TMP_Text>();
             text.text = item.text;
             slot.name = $"ItemSlot_{item.text}";
+
+
+
+
+            Button btn = slot.GetComponent<Button>(); 
+            NonParticle capturedItem = item;
+
+            btn.onClick.AddListener(() => {
+                    
+                   
+                    Inventory.Instance.SelectItem(capturedItem); 
+                    
+                    Debug.Log($"点击了 Slot: {capturedItem.text}");
+                });
+        
         }
         
-       
-        
     }
+
+
+    
 
    
     

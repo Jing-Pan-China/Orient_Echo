@@ -6,6 +6,11 @@ using System.Runtime.InteropServices;
 using  System;
 
 using UnityEngine;
+// using System.Security.Cryptography.X509Certificates;
+// using System.Diagnostics.Contracts;
+// using System.Security.Cryptography;
+
+// using System.Reflection.Metadata.Ecma335;
 
 public class Inventory : MonoBehaviour
 {   
@@ -14,10 +19,14 @@ public class Inventory : MonoBehaviour
     // Inventory Singleton
     public static Inventory Instance{get;private set;}
     public List<NonParticle> nonParticleList= new List<NonParticle>();
-
+    // events
     public static event Action onNonParticleAdded;
+    public static event Action<NonParticle> onItemSelected;
     // public static event Action<NonParticle> onNonParticleAdded;
     public InventoryUI inventoryUI;
+
+    private NonParticle _currentSelectedItem;
+
     
     
     private void Awake()
@@ -40,10 +49,24 @@ public class Inventory : MonoBehaviour
         onNonParticleAdded?.Invoke();
         
     }
-     void Start()
-    {
-        
+
+
+    public void SelectItem(NonParticle item)
+    {   _currentSelectedItem = item;
+        onItemSelected?.Invoke(item);
+      
     }
+
+
+    public 
+     void Start()
+    { }
+    
+    public NonParticle GetCurrentSelectedItem()
+    {
+        return _currentSelectedItem;
+    }
+   
 
     // Update is called once per frame
     void Update()
