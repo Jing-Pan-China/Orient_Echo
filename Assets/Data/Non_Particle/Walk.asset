@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 902d7f9c508de1d4f9d472e73c9b217b, type: 3}
   m_Name: Walk
   m_EditorClassIdentifier: 
-  text: "\u8D70(Walk)"
+  text: Walk

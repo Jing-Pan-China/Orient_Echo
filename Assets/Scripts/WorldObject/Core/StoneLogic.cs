@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+// using System.Diagnostics;
 
+// using System.Diagnostics;
 using UnityEngine;
 
 public class StoneLogic : MonoBehaviour
 {
     // Start is called before the first frame update
     
-     public string requiredItemName = "Stone";
+     public string requiredItemName = "Walk";
+     
     void Start()
     {
         Inventory.onItemSelected += TryInteract;
@@ -32,13 +35,16 @@ public class StoneLogic : MonoBehaviour
     //     }
     //    } 
 
+      
         if (selectedItem != null && selectedItem.text == requiredItemName)
         {
-             Debug.Log("StoneLogic: 物品正确，开门！");
+            
+             Debug.Log("correct,the stone can walk");
         }
         else
         {
             Debug.Log("error");
+            
         }
     }
 }

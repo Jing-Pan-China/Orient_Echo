@@ -79,7 +79,7 @@ public class InventoryUI : MonoBehaviour
                    
                     Inventory.Instance.SelectItem(capturedItem); 
                     
-                    Debug.Log($"点击了 Slot: {capturedItem.text}");
+                    // Debug.Log($"click Slot: {capturedItem.text}");
                 });
         
         }
