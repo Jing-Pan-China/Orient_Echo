@@ -19,6 +19,7 @@ public class StoneArea : InteractionArea
     {
         Debug.Log("interact with stone");
         InventoryUI.Instance.gameObject.SetActive(true);
+        
 
     }
 
