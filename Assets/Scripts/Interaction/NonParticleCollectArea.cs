@@ -19,10 +19,14 @@ public class NonParticleCollectArea : InteractionArea
 
    protected override void OnInteract()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        Inventory inventory = player.GetComponent<Inventory>();
-        // inventory.nonParticleList.Add(nonParticle);
-        inventory.AddNonParticle(nonParticle);
+        // 1. Access Inventory by searching for the Player object,less efficient.
+        // GameObject player = GameObject.FindGameObjectWithTag("Player");
+        // Inventory inventory = player.GetComponent<Inventory>();
+
+        //2.Inventory Singleton
+        Inventory.Instance.AddNonParticle(nonParticle);
+
+        
         Debug.Log(nonParticle);
         Destroy(gameObject);
 

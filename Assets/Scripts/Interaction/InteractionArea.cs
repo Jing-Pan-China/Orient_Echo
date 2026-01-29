@@ -66,7 +66,10 @@ public abstract class InteractionArea:MonoBehaviour
     
     }
 
-    protected abstract void UnInteract();
+    protected virtual void UnInteract()
+    {
+        
+    }
 
 
 }
