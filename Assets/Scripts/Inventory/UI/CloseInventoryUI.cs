@@ -14,7 +14,7 @@ public class CloseInventoryUI : MonoBehaviour
     void Start()
     {   
         // gameObject.SetActive(false);
-        Inventory.Instance.onNonParticleAdded += onNonParticleAdded;
+        // Inventory.Instance.onNonParticleAdded += onNonParticleAdded;
     }
     //   private void Awake()
     // {
@@ -27,14 +27,14 @@ public class CloseInventoryUI : MonoBehaviour
     //     Inventory.onNonParticleAdded += onNonParticleAdded;
         
     // }
-    private void onNonParticleAdded()
-    {
+    // private void onNonParticleAdded()
+    // {
      
-        // show closebutton
-        // closeButton.gameObject.SetActive(true);
+    //     // show closebutton
+    //     // closeButton.gameObject.SetActive(true);
       
 
-    }
+    // }
    public void OnCloseButtonClick()
     {
         InventoryUI.Instance.gameObject.SetActive(false);
