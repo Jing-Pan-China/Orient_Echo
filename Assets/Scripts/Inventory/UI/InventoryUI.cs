@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using TMPro;
-using UnityEngine;
+using UnityEngine; 
 using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
@@ -16,8 +16,10 @@ public class InventoryUI : MonoBehaviour
     public static InventoryUI Instance { get; private set; }
     public Transform inventoryPanel; 
     public GameObject itemSlotPrefab; 
-    
 
+    public Button closeButton;
+    
+    
 
      private void Awake()
     {
@@ -35,6 +37,7 @@ public class InventoryUI : MonoBehaviour
 
     void Start()
     {   gameObject.SetActive(false);
+        // closeButton.gameObject.SetActive(false);
         // Inventory.Instance.onNonParticleAdded += onNonParticleAdded;
          // Subscriber
         Inventory.onNonParticleAdded += onNonParticleAdded;
@@ -45,8 +48,19 @@ public class InventoryUI : MonoBehaviour
         
         Refresh(Inventory.Instance.nonParticleList);
         // gameObject.SetActive(true);
-        inventoryPanel.gameObject.SetActive(true);
+        // closeButton.gameObject.SetActive(true);
+        OpenUI();
+
+        // inventoryPanel.gameObject.SetActive(true)  ;
     }
+
+    public void OpenUI()
+    {
+        gameObject.SetActive(true);
+        closeButton.gameObject.SetActive(true);
+    }
+
+    
 
 
     public void Refresh(List<NonParticle> items)
