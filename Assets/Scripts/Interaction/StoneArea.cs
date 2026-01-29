@@ -14,7 +14,7 @@ public class StoneArea : InteractionArea
 
     
 
-     protected override void OnInteract()
+     protected override void StartInteraction()
 
     {
         Debug.Log("interact with stone");
@@ -23,7 +23,7 @@ public class StoneArea : InteractionArea
 
     }
 
-    protected override void UnInteract()
+    protected override void EndInteraction()
     {
         
     }

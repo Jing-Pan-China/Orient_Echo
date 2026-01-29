@@ -40,13 +40,13 @@ public abstract class InteractionArea:MonoBehaviour
 
         {
             eHint.SetActive(false);
-            OnInteract();
+            StartInteraction();
            
         }
     }
 
 
-    protected abstract void OnInteract();
+    protected abstract void StartInteraction();
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -62,11 +62,11 @@ public abstract class InteractionArea:MonoBehaviour
    // use layer matrix 
     playerInRange=false;
     eHint.SetActive(false);
-    UnInteract();
+    EndInteraction();
     
     }
 
-    protected virtual void UnInteract()
+    protected virtual void EndInteraction()
     {
         
     }

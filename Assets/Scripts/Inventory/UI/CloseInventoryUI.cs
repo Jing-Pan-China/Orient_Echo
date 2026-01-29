@@ -31,14 +31,14 @@ public class CloseInventoryUI : MonoBehaviour
     {
      
         // show closebutton
-        closeButton.gameObject.SetActive(true);
+        // closeButton.gameObject.SetActive(true);
       
 
     }
    public void OnCloseButtonClick()
     {
         InventoryUI.Instance.gameObject.SetActive(false);
-        closeButton.gameObject.SetActive(false);
+        // closeButton.gameObject.SetActive(false);
 
     }
 

@@ -49,7 +49,7 @@ public class InventoryUI : MonoBehaviour
         Refresh(Inventory.Instance.nonParticleList);
         // gameObject.SetActive(true);
         // closeButton.gameObject.SetActive(true);
-        OpenUI();
+        // OpenUI();
 
         // inventoryPanel.gameObject.SetActive(true)  ;
     }
@@ -57,7 +57,7 @@ public class InventoryUI : MonoBehaviour
     public void OpenUI()
     {
         gameObject.SetActive(true);
-        closeButton.gameObject.SetActive(true);
+        // closeButton.gameObject.SetActive(true);
     }
 
     

@@ -59,13 +59,13 @@ using UnityEngine;
 public class DialogueArea: InteractionArea
 {
     public DialogueManager dialogueManager;
-    protected override void OnInteract()
+    protected override void StartInteraction()
     {
         dialogueManager.StartDialogue();
 
     }
 
-    protected override void UnInteract()
+    protected override void EndInteraction()
     {
         dialogueManager.CancelDialogue();
     }

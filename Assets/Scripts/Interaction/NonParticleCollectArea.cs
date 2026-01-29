@@ -17,7 +17,7 @@ public class NonParticleCollectArea : InteractionArea
     
 //     }
 
-   protected override void OnInteract()
+   protected override void StartInteraction()
     {
         // 1. Access Inventory by searching for the Player object,less efficient.
         // GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -26,6 +26,9 @@ public class NonParticleCollectArea : InteractionArea
         //2.Inventory Singleton
         Inventory.Instance.AddNonParticle(nonParticle);
 
+        InventoryUI.Instance.OpenUI();
+
+
         
         Debug.Log(nonParticle);
         Destroy(gameObject);
@@ -33,7 +36,7 @@ public class NonParticleCollectArea : InteractionArea
     }
 
     
-    protected override void UnInteract()
+    protected override void EndInteraction()
     {
         
     }
