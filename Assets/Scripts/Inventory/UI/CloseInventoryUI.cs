@@ -14,7 +14,7 @@ public class CloseInventoryUI : MonoBehaviour
     void Start()
     {   
         // gameObject.SetActive(false);
-        Inventory.onNonParticleAdded += onNonParticleAdded;
+        Inventory.Instance.onNonParticleAdded += onNonParticleAdded;
     }
     //   private void Awake()
     // {

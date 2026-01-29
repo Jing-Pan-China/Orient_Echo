@@ -13,7 +13,7 @@ public class StoneLogic : MonoBehaviour
      
     void Start()
     {
-        Inventory.onItemSelected += TryInteract;
+        Inventory.Instance.onItemSelected += TryInteract;
     }
     
     // Update is called once per frame

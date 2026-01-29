@@ -36,10 +36,10 @@ public class NonParticleCollectArea : InteractionArea
     }
 
     
-    protected override void EndInteraction()
-    {
+    // protected override void EndInteraction()
+    // {
         
-    }
+    // }
 
     
 
