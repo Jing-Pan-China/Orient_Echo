@@ -78,23 +78,26 @@ public class InventoryUI : MonoBehaviour
             GameObject slot = Instantiate(itemSlotPrefab, inventoryPanel);
 
 
-            TMP_Text text = slot.GetComponentInChildren<TMP_Text>();
-            text.text = item.text;
-            slot.name = $"ItemSlot_{item.text}";
+            // TMP_Text text = slot.GetComponentInChildren<TMP_Text>();
+            // text.text = item.text;
+            // slot.name = $"ItemSlot_{item.text}";
 
 
 
 
-            Button btn = slot.GetComponent<Button>(); 
-            NonParticle capturedItem = item;
+            // Button btn = slot.GetComponent<Button>(); 
+            // NonParticle capturedItem = item;
 
-            btn.onClick.AddListener(() => {
+            // btn.onClick.AddListener(() => {
                     
                    
-                    Inventory.Instance.SelectItem(capturedItem); 
+            //         Inventory.Instance.SelectItem(capturedItem); 
                     
-                    // Debug.Log($"click Slot: {capturedItem.text}");
-                });
+            //         // Debug.Log($"click Slot: {capturedItem.text}");
+            //     });
+
+            InventoryItemButton itemButton =slot.GetComponent<InventoryItemButton>();
+            itemButton.SetItem(item);
         
         }
         
