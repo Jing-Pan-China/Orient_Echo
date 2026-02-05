@@ -20,9 +20,9 @@ public class Inventory : MonoBehaviour
     public static Inventory Instance{get;private set;}
     public List<NonParticle> nonParticleList= new List<NonParticle>();
     // events
-    public static event Action onNonParticleAdded;
-    public static event Action<NonParticle> onItemSelected;
-    // public static event Action<NonParticle> onNonParticleAdded;
+    public  event Action onNonParticleAdded;
+    public  event Action<NonParticle> onItemSelected;
+    // public  event Action<NonParticle> onNonParticleAdded;
     public InventoryUI inventoryUI;
 
     private NonParticle _currentSelectedItem;

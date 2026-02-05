@@ -14,15 +14,16 @@ public class StoneArea : InteractionArea
 
     
 
-     protected override void OnInteract()
+     protected override void StartInteraction()
 
     {
         Debug.Log("interact with stone");
         InventoryUI.Instance.gameObject.SetActive(true);
+        
 
     }
 
-    protected override void UnInteract()
+    protected override void EndInteraction()
     {
         
     }
