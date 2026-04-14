@@ -50,20 +50,23 @@ using UnityEngine;
 
 public class LightControl : MonoBehaviour
 {
-    public Color darkAmbientColor = new Color(0f, 0f, 0f);  // 设置为黑光的颜色
-    public Color normalAmbientColor = new Color(1f, 1f, 1f);  // 正常光颜色（白色）
-    private bool isLightDimmed = false;  // 检查光源是否变暗
+    public Color darkAmbientColor = new Color(0f, 0f, 0f);   
+    public Color normalAmbientColor = new Color(1f, 1f, 1f);  
+
+    private Light directionalLight;
+    private bool isLightDimmed = false;  
 
     void Start()
     {
-        // 初始化时将环境光设置为正常亮度
+        // get directionalLight
+        directionalLight = GameObject.Find("Directional Light").GetComponent<Light>();
         //RenderSettings.ambientLight = normalAmbientColor;
         Debug.Log("Initial Ambient Light: " + RenderSettings.ambientLight);
     }
 
     void Update()
     {
-        // 按下 U 键时切换环境光的状态
+        
         if (Input.GetKeyDown(KeyCode.U))
         {
             Debug.Log("U Key Pressed");
@@ -73,19 +76,22 @@ public class LightControl : MonoBehaviour
 
     void ToggleAmbientLight()
     {
-        // 切换环境光颜色
+        
         if (isLightDimmed)
         {
-            RenderSettings.ambientLight = normalAmbientColor;  // 恢复正常环境光
+            RenderSettings.ambientLight = normalAmbientColor;  
             Debug.Log("Ambient Light: Normal");
         }
         else
         {
-            RenderSettings.ambientLight = darkAmbientColor;  // 设置为黑光
+            RenderSettings.ambientLight = darkAmbientColor;  
+            RenderSettings.reflectionIntensity = 0f;
+            RenderSettings.skybox = null;
+            directionalLight.enabled = false; 
             Debug.Log("Ambient Light: Dark");
         }
 
-        // 切换状态
+       
         isLightDimmed = !isLightDimmed;
     }
 }
