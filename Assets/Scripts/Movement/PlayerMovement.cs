@@ -8,8 +8,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    
-    public float moveSpeed=5f;
+
+    public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 input;
 
@@ -18,23 +18,23 @@ public class PlayerMovement : MonoBehaviour
 
 
     void Awake()
-{
-    rb = GetComponent<Rigidbody2D>();  
-}
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
-    
-    
+
+
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        input.x =Input.GetAxisRaw("Horizontal");
-        input.y=Input.GetAxisRaw("Vertical");
-        input=input.normalized;
+        input.x = Input.GetAxisRaw("Horizontal");
+        input.y = Input.GetAxisRaw("Vertical");
+        input = input.normalized;
     }
 
 

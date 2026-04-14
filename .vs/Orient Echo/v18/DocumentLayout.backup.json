@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Orient Echo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1A2EA6AF-DDB7-087A-7D67-74A3411D0253}|Assembly-CSharp.csproj|d:\\orient echo\\assets\\scripts\\light\\lightcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A2EA6AF-DDB7-087A-7D67-74A3411D0253}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\light\\lightcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LightControl.cs",
+              "DocumentMoniker": "D:\\Orient Echo\\Assets\\Scripts\\Light\\LightControl.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Light\\LightControl.cs",
+              "ToolTip": "D:\\Orient Echo\\Assets\\Scripts\\Light\\LightControl.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Light\\LightControl.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAqwEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T08:56:03.37Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
