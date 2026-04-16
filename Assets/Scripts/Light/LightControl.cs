@@ -46,23 +46,31 @@
 //}
 
 
+
 using UnityEngine;
 
 public class LightControl : MonoBehaviour
 {
-    public Color darkAmbientColor = new Color(0f, 0f, 0f);   
-    public Color normalAmbientColor = new Color(1f, 1f, 1f);  
+    private Color darkAmbientColor = new Color(0f, 0f, 0f);   
+    private Color normalAmbientColor = new Color(0.5f, 0.5f, 0.5f);  
 
     private Light directionalLight;
     private bool isLightDimmed = false;  
-
+     
     void Start()
     {
         // get directionalLight
         directionalLight = GameObject.Find("Directional Light").GetComponent<Light>();
-        //RenderSettings.ambientLight = normalAmbientColor;
+        //directionalLight.enabled = false;
+        RenderSettings.ambientLight = normalAmbientColor;
         Debug.Log("Initial Ambient Light: " + RenderSettings.ambientLight);
+        //Debug.Log("directionalLight: " + directionalLight.c);
+        // LightmapSettings.lightmapsMode = LightmapsMode.NonDirectional;
+        // LightmapSettings.lightmaps = new LightmapData[0];
     }
+
+
+//  
 
     void Update()
     {
@@ -73,25 +81,34 @@ public class LightControl : MonoBehaviour
             ToggleAmbientLight();
         }
     }
+    
 
     void ToggleAmbientLight()
     {
-        
+        Debug.Log("Ambient Light Before First Toggle: " + RenderSettings.ambientLight);
         if (isLightDimmed)
         {
-            RenderSettings.ambientLight = normalAmbientColor;  
+            RenderSettings.ambientLight = normalAmbientColor;
+            directionalLight.enabled = true;
+            directionalLight.intensity = 1f;
             Debug.Log("Ambient Light: Normal");
+            Debug.Log("Ambient Light after second Toggle: " + RenderSettings.ambientLight);
         }
         else
         {
             RenderSettings.ambientLight = darkAmbientColor;  
             RenderSettings.reflectionIntensity = 0f;
-            RenderSettings.skybox = null;
+            // RenderSettings.skybox = null;
             directionalLight.enabled = false; 
             Debug.Log("Ambient Light: Dark");
+            Debug.Log("Ambient Light after first Toggle: " + RenderSettings.ambientLight);
         }
 
        
         isLightDimmed = !isLightDimmed;
     }
 }
+
+
+
+
