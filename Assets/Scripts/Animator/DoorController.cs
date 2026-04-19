@@ -42,7 +42,9 @@ public class DoorController : MonoBehaviour
 
     public void DoorClose()
     {
+         
          animator.SetBool("OpenDoor", false);
          animator.SetBool("CloseDoor", true);
+         Debug.Log("CloseDoor called");
     }
 }
