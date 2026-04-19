@@ -330,7 +330,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &601696342
 Transform:
   m_ObjectHideFlags: 0
@@ -1472,7 +1472,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 15, y: 10, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -1}
 --- !u!114 &1380876980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1485,8 +1485,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a63fc181ab2c61438738d8e287f26e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInRange: 0
+  playerInRange: 1
   eHint: {fileID: 601696341}
+  doorController: {fileID: 1380876978}
 --- !u!1 &1416885721
 GameObject:
   m_ObjectHideFlags: 0

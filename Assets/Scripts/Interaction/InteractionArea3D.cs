@@ -46,6 +46,8 @@ public abstract class InteractionArea3D:MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+
+    Debug.Log("EXIT: " + other.name);
    // use layer matrix 
     playerInRange=false;
     eHint.SetActive(false);

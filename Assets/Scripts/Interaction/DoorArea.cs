@@ -22,15 +22,22 @@ using UnityEngine;
 
 public class DoorArea : InteractionArea3D
 {
+    public DoorController doorController;
+    
     protected override void StartInteraction()
     {
-        
+        doorController.DoorOpen();
     }
 
     // private void OnTriggerEnter(Collider other)
     // {
+  
         
-        
+    // }
+
+    // protected override void EndInteraction()
+    // {
+    //     doorController.DoorClose();
     // }
 
 }
