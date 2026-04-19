@@ -15,16 +15,16 @@ public class DoorController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             //animator.SetTrigger("OpenDoor");
-
-            animator.SetBool("Open", true);
-            animator.SetBool("Close", false);
+            Debug.Log("press E");
+            animator.SetBool("OpenDoor", true);
+            animator.SetBool("CloseDoor", false);
         }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
             //animator.SetTrigger("CloseDoor");
-            animator.SetBool("Open", false);
-            animator.SetBool("Close", true);
+            animator.SetBool("OpenDoor", false);
+            animator.SetBool("CloseDoor", true);
         }
     }
 }
