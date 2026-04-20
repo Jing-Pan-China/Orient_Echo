@@ -15,8 +15,8 @@ TagManager:
   - DialogueArea
   - Card
   - WorldObject
-  - Door
-  - 
+  - DoorArea
+  - CurtainArea
   - 
   - 
   - 
