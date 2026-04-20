@@ -1488,6 +1488,7 @@ MonoBehaviour:
   playerInRange: 1
   eHint: {fileID: 601696341}
   doorController: {fileID: 1380876978}
+  lightControl: {fileID: 371057842}
 --- !u!1 &1416885721
 GameObject:
   m_ObjectHideFlags: 0
