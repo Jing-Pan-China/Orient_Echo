@@ -1359,7 +1359,7 @@ Transform:
   m_GameObject: {fileID: 1332422629}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.23204994, y: 4.12, z: -7.0899997}
+  m_LocalPosition: {x: 0, y: 4.12, z: -20}
   m_LocalScale: {x: 1, y: 10, z: 13.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1722,6 +1722,7 @@ MonoBehaviour:
   eHint: {fileID: 601696341}
   doorController: {fileID: 1380876978}
   lightControl: {fileID: 371057842}
+  curtainControl: {fileID: 2098813980}
 --- !u!65 &1471993659
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1826,7 +1827,7 @@ Transform:
   m_GameObject: {fileID: 1672687002}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.23204994, y: 4.12, z: 6.8}
+  m_LocalPosition: {x: 0.23204994, y: 4.12, z: 20}
   m_LocalScale: {x: 1, y: 10, z: 13.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2123,6 +2124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2098813978}
   - component: {fileID: 2098813979}
+  - component: {fileID: 2098813980}
   m_Layer: 0
   m_Name: CurtainObject
   m_TagString: Untagged
@@ -2168,6 +2170,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2098813980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098813977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354ceff7a44d2ac48b71d52e2de903b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2098813979}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -10,25 +10,7 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
     public Animator animator;
-
-    // void Update()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.E))
-    //     {
-    //         //animator.SetTrigger("OpenDoor");
-    //         Debug.Log("press E");
-    //         animator.SetBool("OpenDoor", true);
-    //         animator.SetBool("CloseDoor", false);
-    //     }
-
-    //     if (Input.GetKeyDown(KeyCode.R))
-    //     {
-    //         //animator.SetTrigger("CloseDoor");
-    //         animator.SetBool("OpenDoor", false);
-    //         animator.SetBool("CloseDoor", true);
-    //     }
-    // }
-
+    
     public void DoorOpen()
     {
         // if (Input.GetKeyDown(KeyCode.E))
@@ -47,4 +29,23 @@ public class DoorController : MonoBehaviour
          animator.SetBool("CloseDoor", true);
          Debug.Log("CloseDoor called");
     }
+
+
+    // void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.E))
+    //     {
+    //         //animator.SetTrigger("OpenDoor");
+    //         Debug.Log("press E");
+    //         animator.SetBool("OpenDoor", true);
+    //         animator.SetBool("CloseDoor", false);
+    //     }
+
+    //     if (Input.GetKeyDown(KeyCode.R))
+    //     {
+    //         //animator.SetTrigger("CloseDoor");
+    //         animator.SetBool("OpenDoor", false);
+    //         animator.SetBool("CloseDoor", true);
+    //     }
+    // }
 }

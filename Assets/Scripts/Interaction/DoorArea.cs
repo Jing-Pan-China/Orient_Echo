@@ -5,7 +5,16 @@ public class DoorArea : InteractionArea3D
     public DoorController doorController;
     public LightControl lightControl;
 
+    public CurtainControl curtainControl;
+
     private bool isOpen = false;
+
+    void Start()
+    {
+        Debug.Log("set curtain open");
+        curtainControl.CurtainOpen();
+      
+    }
 
     protected override void StartInteraction()
     {
