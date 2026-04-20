@@ -3,6 +3,7 @@ using UnityEngine;
 public class DoorArea : InteractionArea3D
 {
     public DoorController doorController;
+    public LightControl lightControl;
 
     private bool isOpen = false;
 
@@ -23,8 +24,13 @@ public class DoorArea : InteractionArea3D
             Debug.Log("Player left → Close door");
 
             doorController.DoorClose();
+            lightControl.TurnOffLight();
+
             isOpen = false;
         }
+
+
+
     }
 }
 
