@@ -32,7 +32,11 @@ public class DoorArea : InteractionArea3D
         {
             Debug.Log("Player left → Close door");
 
+            
+            
             doorController.DoorClose();
+            curtainControl.CurtainClose();
+            // yield return new WaitForSeconds(0.5f);
             lightControl.TurnOffLight();
 
             isOpen = false;
