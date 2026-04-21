@@ -9,10 +9,10 @@ public class CurtainArea : InteractionArea3D
 
     private bool isOpen = true;
 
-    void Awake()
-{
-    Debug.Log("CurtainArea Awake");
-}
+//     void Awake()
+// {
+//     Debug.Log("CurtainArea Awake");
+// }
     
     
     // void Start()
