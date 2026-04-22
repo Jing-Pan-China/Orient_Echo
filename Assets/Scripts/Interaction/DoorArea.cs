@@ -9,6 +9,7 @@ public class DoorArea : InteractionArea3D
 
     private bool isOpen = false;
 
+    //The Curtain need to be open when the scence is started  
     void Start()
     {
         Debug.Log("set curtain open");
@@ -16,6 +17,15 @@ public class DoorArea : InteractionArea3D
       
     }
 
+    // The environment changes when the player exits the door trigger area with three elements (door,curtain and light)
+    void CloseEnvironment()
+    {
+        doorController.DoorClose();
+        curtainControl.CurtainClose();
+        lightControl.TurnOffLight();
+    }
+
+    // The door is open when the player enter into the door trigger area
     protected override void StartInteraction()
     {
         if (!isOpen)
@@ -32,12 +42,12 @@ public class DoorArea : InteractionArea3D
         {
             Debug.Log("Player left → Close door");
 
+             CloseEnvironment();
             
-            
-            doorController.DoorClose();
-            curtainControl.CurtainClose();
-            // yield return new WaitForSeconds(0.5f);
-            lightControl.TurnOffLight();
+            // doorController.DoorClose();
+            // curtainControl.CurtainClose();
+            // // yield return new WaitForSeconds(0.5f);
+            // lightControl.TurnOffLight();
 
             isOpen = false;
         }
